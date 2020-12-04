@@ -8,12 +8,12 @@ def import_json(path: str):
 
 def get_no_of_valid_passwords():
     password_sets = import_json("input.json")
+
     return sum(
         [
             1
             for password_set in password_sets
             if password_valid(next(iter(password_set)), list(password_set.values())[0])
-            == True
         ]
     )
 
